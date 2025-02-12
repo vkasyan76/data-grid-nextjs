@@ -3,10 +3,11 @@ import { Button } from "@/components/ui/button";
 import * as XLSX from "xlsx";  
   
 type Props = {  
-  onUpload: (results: any) => void;  
+  onUpload: (results: any) => void; 
+  disabled?: boolean; // Add this line 
 };  
   
-export function FileUploadButton({ onUpload }: Props) {  
+export function FileUploadButton({ onUpload, disabled  }: Props) {  
   const fileInputRef = useRef<HTMLInputElement | null>(null);  
   
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {  
@@ -41,7 +42,8 @@ export function FileUploadButton({ onUpload }: Props) {
         onChange={handleFileChange}  
         style={{ display: "none" }} // Hide the input  
       />  
-      <Button onClick={handleButtonClick}>Select File</Button>  
+         {/* Pass the disabled prop to the Button */}  
+      <Button onClick={handleButtonClick} disabled={disabled}>Select File</Button>  
     </div>  
   );  
 }  

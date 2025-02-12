@@ -20,13 +20,13 @@ function DataGridDynamicLoadPage() {
   }; 
   
   return ( 
-    <>    
+    <div className="max-w-screen-2xl mx-auto w-full pb-10 mt-8">    
     <div className="flex flex-col lg:flex-row gap-y-2 items-center gap-x-2">  
-      <FileUploadButton onUpload={handleUpload} />
-      <Button onClick={handleClear} className="ml-2">Clear Data</Button>  </div>
+      <FileUploadButton onUpload={handleUpload} disabled={rowData.length > 0}/>
+      <Button onClick={handleClear} className="ml-2" disabled={rowData.length === 0}>Clear Data</Button>  </div>
       <h1>Data Grid React</h1>  
       <DataGridDynamicUpload rowData={rowData} />  
-    </> 
+    </div> 
  
   );  
 }  
