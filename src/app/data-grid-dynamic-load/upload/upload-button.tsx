@@ -23,6 +23,9 @@ export function FileUploadButton({ onUpload }: Props) {
       onUpload(jsonData);  
     };  
     reader.readAsArrayBuffer(file);  
+
+        // Reset input value so the same file can be re-uploaded.  
+        event.target.value = '';  
   };  
   
   const handleButtonClick = () => {  
