@@ -43,6 +43,11 @@ export default function HomePage() {
             Data-Grid-Dynamic
           </Button>
         </Link>
+        <Link  href="/data-grid-dynamic-load" passHref>
+          <Button variant="default" size="lg">
+            Data-Grid-Dynamic-Load
+          </Button>
+        </Link>
         
         </div>
   </section>
